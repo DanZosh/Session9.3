@@ -16,7 +16,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'githubUsername',
+        name: 'github',
         message: 'WHAT IS YOUR GITHUB USERNAME',
     },
     {
@@ -29,6 +29,44 @@ const questions = [
 
     inquirer
     .prompt(questions).then((data) => {
-
-
+        console.log(data)
+        generateHTML(data)
+        fs.writeFile('index2.html', JSON.stringify(data), (err) => {
+            err?
+            console.log('failed to write file'):
+            console.log('wrote file')
+        })
     });
+    
+    // console.log(data.name)
+    // console.log(data.origin)
+    // console.log(data.github)
+    // console.log(data.linkedIn)
+
+
+    function generateHTML(data) {
+`
+        <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <title>Document</title>
+      </head>
+      <body>
+        <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 id="name" class="display-4">Hi! My name is ${data.name}</h1>
+          <p id="origin" class="lead">I am from ${data.origin}.</p>
+          <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
+          <ul class="list-group">
+            <li id="github" class="list-group-item">My GitHub username is ${data.github}</li>
+            <li id="linkedIn"class="list-group-item">LinkedIn:${data.linkedIn} </li>
+          </ul>
+        </div>
+      </div>
+      </body>
+      </html>
+      `
+    }
+    
+    
