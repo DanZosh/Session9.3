@@ -33,8 +33,8 @@ const questions = [
         const htmlContent = generateHTML(data)
         fs.writeFile('index2.html',htmlContent, (err) => {
             err?
-            console.log('failed to write file'):
-            console.log('wrote file')
+            console.log('FAILED TO WRITE FILE'):
+            console.log('THE FILE HAS BEEN WRITTEN')
         })
     });
     
@@ -43,7 +43,7 @@ const questions = [
 
     function generateHTML(data) {
         
-    return`
+    const string = `
         <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -65,6 +65,7 @@ const questions = [
     </body>
     </html>
     `
+    return(string)
     }
     
     
