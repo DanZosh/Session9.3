@@ -1,0 +1,23 @@
+{
+  "name": "Session9.3",
+  "version": "1.0.0",
+  "description": "In this activity, you will build a command-line tool that generates an HTML portfolio page from user input.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanZosh/Session9.3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanZosh/Session9.3/issues"
+  },
+  "homepage": "https://github.com/DanZosh/Session9.3#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  }
+}
